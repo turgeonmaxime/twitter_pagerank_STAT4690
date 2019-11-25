@@ -15,9 +15,7 @@ node_sub <- node_data %>%
 # Only keep the edges that connect two nodes in the subset
 edge_sub <- edge_data %>% 
   filter(Node_Id_1 %in% node_sub,
-         Node_Id_2 %in% node_sub) %>% 
-  mutate(Node_Id_1 = as.character(Node_Id_1),
-         Node_Id_2 = as.character(Node_Id_2))
+         Node_Id_2 %in% node_sub)
 
 # Save results
 write_csv(edge_sub, "edge_list_subset.csv")
